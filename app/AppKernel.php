@@ -18,6 +18,7 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new AppBundle\AppBundle(),
             new eQuest\Admin\QuestBundle\eQuestAdminAcmeQuestBundle(),
+            new eQuest\Api\QuestBundle\eQuestApiQuestBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

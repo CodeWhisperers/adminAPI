@@ -1,3 +1,7 @@
+e_quest_api_quest:
+    resource: "@eQuestApiQuestBundle/Resources/config/routing.yml"
+    prefix:   /
+
 e_quest_admin_acme_quest:
     resource: "@eQuestAdminAcmeQuestBundle/Resources/config/routing.yml"
     prefix:   /
