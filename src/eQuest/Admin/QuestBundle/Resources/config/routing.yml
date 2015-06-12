@@ -1,0 +1,3 @@
+e_quest_admin_acme_quest_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: eQuestAdminAcmeQuestBundle:Default:index }

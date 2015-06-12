@@ -1,0 +1,4 @@
+services:
+#    e_quest_admin_acme_quest.example:
+#        class: eQuest\Admin\QuestBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]
