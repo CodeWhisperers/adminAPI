@@ -25,15 +25,17 @@ class QuestController extends Controller
             array('json' => new JsonEncoder())
         );
         $json = $serializer->serialize($quest, 'json');
+        $response = new Response();
+        $response->headers->set('Content-Type', 'application/json');
+        $response->setContent($json);
 
-        return new Response($json);
+        return $response;
     }
 
     public function getQuestListAction()
     {
         $repository = $this->getDoctrine()->getRepository('eQuestApiQuestBundle:Quest');
         $quests = $repository->findAll();
-        //toate questurile
         $serializer = new Serializer(
             array(new GetSetMethodNormalizer()),
             array('json' => new JsonEncoder())
