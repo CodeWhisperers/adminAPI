@@ -30,9 +30,18 @@ class ApiQuestController extends Controller
         $response->setCallback('getQuest');
         return $response;*/
 
-        $json = array("id"=>1,"name"=>"HR quest","status"=>1,"description"=>"FIND HR DEP. AND SCAN QR CODE .. eNJOY","ts"=>2015,"targetsToAchive"=>"","tXp"=>10);
-        $response = new JsonResponse($json, 200, $json);
-        $response->setCallback('getQuest');
+        $json = array(
+                "id"=>1,
+                "name"=>"HR quest",
+                "status"=>1,
+                "description"=>"FIND HR DEP. AND SCAN QR CODE .. eNJOY",
+                "ts"=>2015,
+                "targetsToAchive"=>"",
+                "tXp"=>10);
+        $callback = 'eQuest';
+
+        $response = new JsonResponse($json, 200, array());
+        $response->setCallback($callback);
         return $response;
 
         /*
