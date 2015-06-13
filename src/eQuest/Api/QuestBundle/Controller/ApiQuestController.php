@@ -27,6 +27,9 @@ class ApiQuestController extends Controller
         $json = $serializer->serialize($quest, 'json');
         $response = new Response();
         $response->headers->set('Content-Type', 'application/json');
+        $response->headers->set("Access-Control-Allow-Origin", "*");
+        $response->headers->set("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+        $response->headers->set('Access-Control-Allow-Headers', 'origin, content-type, accept');
         $response->setContent($json);
 
         return $response;
@@ -43,6 +46,9 @@ class ApiQuestController extends Controller
         $json = $serializer->serialize($quests, 'json');
         $response = new Response();
         $response->headers->set('Content-Type', 'application/json');
+        $response->headers->set("Access-Control-Allow-Origin", "*");
+        $response->headers->set("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+        $response->headers->set('Access-Control-Allow-Headers', 'origin, content-type, accept');
         $response->setContent($json);
 
         return $response;
