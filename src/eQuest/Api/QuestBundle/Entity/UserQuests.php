@@ -102,4 +102,10 @@ class UserQuests
         $this->quests_id = $quests_id;
     }
 
+    /**
+     * @var integer
+     */
+    private $user_id;
+
+
 }

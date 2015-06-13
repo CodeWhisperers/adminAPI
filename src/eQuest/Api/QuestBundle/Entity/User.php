@@ -175,4 +175,32 @@ class User
         $this->t_xp = $t_xp;
     }
 
+    /**
+     * @var integer
+     */
+    private $activ_quest_id;
+
+
+    /**
+     * Set activ_quest_id
+     *
+     * @param integer $activQuestId
+     * @return User
+     */
+    public function setActivQuestId($activQuestId)
+    {
+        $this->activ_quest_id = $activQuestId;
+
+        return $this;
+    }
+
+    /**
+     * Get activ_quest_id
+     *
+     * @return integer 
+     */
+    public function getActivQuestId()
+    {
+        return $this->activ_quest_id;
+    }
 }

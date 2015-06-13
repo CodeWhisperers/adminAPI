@@ -1,0 +1,17 @@
+eQuest\Api\QuestBundle\Entity\Achivement:
+    type: entity
+    table: null
+    repositoryClass: eQuest\Api\QuestBundle\Entity\AchivementRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        status:
+            type: integer
+    lifecycleCallbacks: {  }

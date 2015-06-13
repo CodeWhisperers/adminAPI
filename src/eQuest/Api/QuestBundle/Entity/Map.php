@@ -129,4 +129,10 @@ class Map
         $this->img = $img;
     }
 
+    /**
+     * @var integer
+     */
+    private $floor_no;
+
+
 }

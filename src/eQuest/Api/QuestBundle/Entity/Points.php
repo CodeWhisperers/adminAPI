@@ -138,4 +138,42 @@ class Points
 
     private $qrCode;
 
+    /**
+     * @var string
+     */
+    private $name;
+
+    /**
+     * @var integer
+     */
+    private $map_id;
+
+    /**
+     * @var string
+     */
+    private $qr_code;
+
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     * @return Points
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string 
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
 }

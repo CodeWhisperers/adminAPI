@@ -1,0 +1,29 @@
+eQuest\Api\QuestBundle\Entity\Points:
+    type: entity
+    table: null
+    repositoryClass: eQuest\Api\QuestBundle\Entity\PointsRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        details:
+            type: string
+            length: 255
+        x:
+            type: integer
+        y:
+            type: integer
+        map_id:
+            type: integer
+        type:
+            type: integer
+        qr_code:
+            type: string
+            length: 255
+    lifecycleCallbacks: { }

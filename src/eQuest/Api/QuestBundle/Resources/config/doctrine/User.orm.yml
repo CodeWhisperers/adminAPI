@@ -1,7 +1,7 @@
-eQuest\Api\QuestBundle\Entity\Quest:
+eQuest\Api\QuestBundle\Entity\User:
     type: entity
     table: null
-    repositoryClass: eQuest\Api\QuestBundle\Entity\QuestRepository
+    repositoryClass: eQuest\Api\QuestBundle\Entity\UserRepository
     id:
         id:
             type: integer
@@ -9,19 +9,22 @@ eQuest\Api\QuestBundle\Entity\Quest:
             generator:
                 strategy: AUTO
     fields:
-        name:
+        email:
             type: string
             length: 255
-        name:
+        domain:
             type: string
             length: 255
-        description:
-            type: text
-        ts:
+        avatar:
+            type: string
+            length: 255
+        status:
+            type: integer
+        type:
             type: integer
         t_xp:
             type: integer
-        targets_to_achive:
-            type: text
+        activ_quest_id:
+            type: integer
             column: targets_to_achive
     lifecycleCallbacks: {  }

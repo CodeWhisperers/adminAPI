@@ -1,7 +1,7 @@
-eQuest\Api\QuestBundle\Entity\Quest:
+eQuest\Api\QuestBundle\Entity\Map:
     type: entity
     table: null
-    repositoryClass: eQuest\Api\QuestBundle\Entity\QuestRepository
+    repositoryClass: eQuest\Api\QuestBundle\Entity\MapRepository
     id:
         id:
             type: integer
@@ -12,16 +12,12 @@ eQuest\Api\QuestBundle\Entity\Quest:
         name:
             type: string
             length: 255
-        name:
+        building:
             type: string
             length: 255
-        description:
-            type: text
-        ts:
+        floor_no:
             type: integer
-        t_xp:
-            type: integer
-        targets_to_achive:
-            type: text
-            column: targets_to_achive
+        img:
+            type: string
+            length: 255
     lifecycleCallbacks: {  }

@@ -1,0 +1,20 @@
+eQuest\Api\QuestBundle\Entity\UserQuests:
+    type: entity
+    table: null
+    repositoryClass: eQuest\Api\QuestBundle\Entity\UserQuestsRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        user_id:
+            type: integer
+        status:
+            type: integer
+        progress:
+            type: integer
+        quests_id:
+            type: integer
+    lifecycleCallbacks: {  }
