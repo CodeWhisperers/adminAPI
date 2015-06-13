@@ -25,7 +25,7 @@ class QuestController extends Controller
             array('json' => new JsonEncoder())
         );
         $json = $serializer->serialize($quest, 'json');
-        
+
         return new Response($json);
     }
 
@@ -34,7 +34,13 @@ class QuestController extends Controller
         $repository = $this->getDoctrine()->getRepository('eQuestApiQuestBundle:Quest');
         $quests = $repository->findAll();
         //toate questurile
-        return new JsonResponse($quests);
+        $serializer = new Serializer(
+            array(new GetSetMethodNormalizer()),
+            array('json' => new JsonEncoder())
+        );
+        $json = $serializer->serialize($quests, 'json');
+
+        return new Response($json);
     }
 
     public function setActiveQuestAction($user_id,$quest_id){
