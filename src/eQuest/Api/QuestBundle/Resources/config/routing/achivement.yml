@@ -1,0 +1,30 @@
+admin_achivement_:
+    path:     /
+    defaults: { _controller: "eQuestApiQuestBundle:Achivement:index" }
+
+admin_achivement__show:
+    path:     /{id}/show
+    defaults: { _controller: "eQuestApiQuestBundle:Achivement:show" }
+
+admin_achivement__new:
+    path:     /new
+    defaults: { _controller: "eQuestApiQuestBundle:Achivement:new" }
+
+admin_achivement__create:
+    path:     /create
+    defaults: { _controller: "eQuestApiQuestBundle:Achivement:create" }
+    methods:  POST
+
+admin_achivement__edit:
+    path:     /{id}/edit
+    defaults: { _controller: "eQuestApiQuestBundle:Achivement:edit" }
+
+admin_achivement__update:
+    path:     /{id}/update
+    defaults: { _controller: "eQuestApiQuestBundle:Achivement:update" }
+    methods:  [POST, PUT]
+
+admin_achivement__delete:
+    path:     /{id}/delete
+    defaults: { _controller: "eQuestApiQuestBundle:Achivement:delete" }
+    methods:  [POST, DELETE]

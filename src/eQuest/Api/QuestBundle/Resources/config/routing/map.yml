@@ -1,0 +1,30 @@
+admin_map_:
+    path:     /
+    defaults: { _controller: "eQuestApiQuestBundle:Map:index" }
+
+admin_map__show:
+    path:     /{id}/show
+    defaults: { _controller: "eQuestApiQuestBundle:Map:show" }
+
+admin_map__new:
+    path:     /new
+    defaults: { _controller: "eQuestApiQuestBundle:Map:new" }
+
+admin_map__create:
+    path:     /create
+    defaults: { _controller: "eQuestApiQuestBundle:Map:create" }
+    methods:  POST
+
+admin_map__edit:
+    path:     /{id}/edit
+    defaults: { _controller: "eQuestApiQuestBundle:Map:edit" }
+
+admin_map__update:
+    path:     /{id}/update
+    defaults: { _controller: "eQuestApiQuestBundle:Map:update" }
+    methods:  [POST, PUT]
+
+admin_map__delete:
+    path:     /{id}/delete
+    defaults: { _controller: "eQuestApiQuestBundle:Map:delete" }
+    methods:  [POST, DELETE]

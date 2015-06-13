@@ -1,0 +1,30 @@
+admin_points_:
+    path:     /
+    defaults: { _controller: "eQuestApiQuestBundle:Points:index" }
+
+admin_points__show:
+    path:     /{id}/show
+    defaults: { _controller: "eQuestApiQuestBundle:Points:show" }
+
+admin_points__new:
+    path:     /new
+    defaults: { _controller: "eQuestApiQuestBundle:Points:new" }
+
+admin_points__create:
+    path:     /create
+    defaults: { _controller: "eQuestApiQuestBundle:Points:create" }
+    methods:  POST
+
+admin_points__edit:
+    path:     /{id}/edit
+    defaults: { _controller: "eQuestApiQuestBundle:Points:edit" }
+
+admin_points__update:
+    path:     /{id}/update
+    defaults: { _controller: "eQuestApiQuestBundle:Points:update" }
+    methods:  [POST, PUT]
+
+admin_points__delete:
+    path:     /{id}/delete
+    defaults: { _controller: "eQuestApiQuestBundle:Points:delete" }
+    methods:  [POST, DELETE]

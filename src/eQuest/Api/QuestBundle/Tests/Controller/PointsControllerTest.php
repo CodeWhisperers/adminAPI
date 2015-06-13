@@ -4,7 +4,7 @@ namespace eQuest\Api\QuestBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-class QuestControllerTest extends WebTestCase
+class PointsControllerTest extends WebTestCase
 {
     /*
     public function testCompleteScenario()
@@ -13,13 +13,13 @@ class QuestControllerTest extends WebTestCase
         $client = static::createClient();
 
         // Create a new entry in the database
-        $crawler = $client->request('GET', '/admin/quest//');
-        $this->assertEquals(200, $client->getResponse()->getStatusCode(), "Unexpected HTTP status code for GET /admin/quest//");
+        $crawler = $client->request('GET', '/admin/points//');
+        $this->assertEquals(200, $client->getResponse()->getStatusCode(), "Unexpected HTTP status code for GET /admin/points//");
         $crawler = $client->click($crawler->selectLink('Create a new entry')->link());
 
         // Fill in the form and submit it
         $form = $crawler->selectButton('Create')->form(array(
-            'equest_api_questbundle_quest[field_name]'  => 'Test',
+            'equest_api_questbundle_points[field_name]'  => 'Test',
             // ... other fields to fill
         ));
 
@@ -33,7 +33,7 @@ class QuestControllerTest extends WebTestCase
         $crawler = $client->click($crawler->selectLink('Edit')->link());
 
         $form = $crawler->selectButton('Update')->form(array(
-            'equest_api_questbundle_quest[field_name]'  => 'Foo',
+            'equest_api_questbundle_points[field_name]'  => 'Foo',
             // ... other fields to fill
         ));
 

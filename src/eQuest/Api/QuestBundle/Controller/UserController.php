@@ -5,37 +5,37 @@ namespace eQuest\Api\QuestBundle\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-use eQuest\Api\QuestBundle\Entity\Quest;
-use eQuest\Api\QuestBundle\Form\QuestType;
+use eQuest\Api\QuestBundle\Entity\User;
+use eQuest\Api\QuestBundle\Form\UserType;
 
 /**
- * Quest controller.
+ * User controller.
  *
  */
-class QuestController extends Controller
+class UserController extends Controller
 {
 
     /**
-     * Lists all Quest entities.
+     * Lists all User entities.
      *
      */
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('eQuestApiQuestBundle:Quest')->findAll();
+        $entities = $em->getRepository('eQuestApiQuestBundle:User')->findAll();
 
-        return $this->render('eQuestApiQuestBundle:Quest:index.html.twig', array(
+        return $this->render('eQuestApiQuestBundle:User:index.html.twig', array(
             'entities' => $entities,
         ));
     }
     /**
-     * Creates a new Quest entity.
+     * Creates a new User entity.
      *
      */
     public function createAction(Request $request)
     {
-        $entity = new Quest();
+        $entity = new User();
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
 
@@ -44,26 +44,26 @@ class QuestController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('admin_quest__show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('admin_user__show', array('id' => $entity->getId())));
         }
 
-        return $this->render('eQuestApiQuestBundle:Quest:new.html.twig', array(
+        return $this->render('eQuestApiQuestBundle:User:new.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
         ));
     }
 
     /**
-     * Creates a form to create a Quest entity.
+     * Creates a form to create a User entity.
      *
-     * @param Quest $entity The entity
+     * @param User $entity The entity
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createCreateForm(Quest $entity)
+    private function createCreateForm(User $entity)
     {
-        $form = $this->createForm(new QuestType(), $entity, array(
-            'action' => $this->generateUrl('admin_quest__create'),
+        $form = $this->createForm(new UserType(), $entity, array(
+            'action' => $this->generateUrl('admin_user__create'),
             'method' => 'POST',
         ));
 
@@ -73,60 +73,60 @@ class QuestController extends Controller
     }
 
     /**
-     * Displays a form to create a new Quest entity.
+     * Displays a form to create a new User entity.
      *
      */
     public function newAction()
     {
-        $entity = new Quest();
+        $entity = new User();
         $form   = $this->createCreateForm($entity);
 
-        return $this->render('eQuestApiQuestBundle:Quest:new.html.twig', array(
+        return $this->render('eQuestApiQuestBundle:User:new.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
         ));
     }
 
     /**
-     * Finds and displays a Quest entity.
+     * Finds and displays a User entity.
      *
      */
     public function showAction($id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('eQuestApiQuestBundle:Quest')->find($id);
+        $entity = $em->getRepository('eQuestApiQuestBundle:User')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Quest entity.');
+            throw $this->createNotFoundException('Unable to find User entity.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
 
-        return $this->render('eQuestApiQuestBundle:Quest:show.html.twig', array(
+        return $this->render('eQuestApiQuestBundle:User:show.html.twig', array(
             'entity'      => $entity,
             'delete_form' => $deleteForm->createView(),
         ));
     }
 
     /**
-     * Displays a form to edit an existing Quest entity.
+     * Displays a form to edit an existing User entity.
      *
      */
     public function editAction($id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('eQuestApiQuestBundle:Quest')->find($id);
+        $entity = $em->getRepository('eQuestApiQuestBundle:User')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Quest entity.');
+            throw $this->createNotFoundException('Unable to find User entity.');
         }
 
         $editForm = $this->createEditForm($entity);
         $deleteForm = $this->createDeleteForm($id);
 
-        return $this->render('eQuestApiQuestBundle:Quest:edit.html.twig', array(
+        return $this->render('eQuestApiQuestBundle:User:edit.html.twig', array(
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
@@ -134,16 +134,16 @@ class QuestController extends Controller
     }
 
     /**
-    * Creates a form to edit a Quest entity.
+    * Creates a form to edit a User entity.
     *
-    * @param Quest $entity The entity
+    * @param User $entity The entity
     *
     * @return \Symfony\Component\Form\Form The form
     */
-    private function createEditForm(Quest $entity)
+    private function createEditForm(User $entity)
     {
-        $form = $this->createForm(new QuestType(), $entity, array(
-            'action' => $this->generateUrl('admin_quest__update', array('id' => $entity->getId())),
+        $form = $this->createForm(new UserType(), $entity, array(
+            'action' => $this->generateUrl('admin_user__update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
@@ -152,17 +152,17 @@ class QuestController extends Controller
         return $form;
     }
     /**
-     * Edits an existing Quest entity.
+     * Edits an existing User entity.
      *
      */
     public function updateAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('eQuestApiQuestBundle:Quest')->find($id);
+        $entity = $em->getRepository('eQuestApiQuestBundle:User')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Quest entity.');
+            throw $this->createNotFoundException('Unable to find User entity.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
@@ -172,17 +172,17 @@ class QuestController extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('admin_quest__edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('admin_user__edit', array('id' => $id)));
         }
 
-        return $this->render('eQuestApiQuestBundle:Quest:edit.html.twig', array(
+        return $this->render('eQuestApiQuestBundle:User:edit.html.twig', array(
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
     }
     /**
-     * Deletes a Quest entity.
+     * Deletes a User entity.
      *
      */
     public function deleteAction(Request $request, $id)
@@ -192,21 +192,21 @@ class QuestController extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $entity = $em->getRepository('eQuestApiQuestBundle:Quest')->find($id);
+            $entity = $em->getRepository('eQuestApiQuestBundle:User')->find($id);
 
             if (!$entity) {
-                throw $this->createNotFoundException('Unable to find Quest entity.');
+                throw $this->createNotFoundException('Unable to find User entity.');
             }
 
             $em->remove($entity);
             $em->flush();
         }
 
-        return $this->redirect($this->generateUrl('admin_quest_'));
+        return $this->redirect($this->generateUrl('admin_user_'));
     }
 
     /**
-     * Creates a form to delete a Quest entity by id.
+     * Creates a form to delete a User entity by id.
      *
      * @param mixed $id The entity id
      *
@@ -215,7 +215,7 @@ class QuestController extends Controller
     private function createDeleteForm($id)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('admin_quest__delete', array('id' => $id)))
+            ->setAction($this->generateUrl('admin_user__delete', array('id' => $id)))
             ->setMethod('DELETE')
             ->add('submit', 'submit', array('label' => 'Delete'))
             ->getForm()

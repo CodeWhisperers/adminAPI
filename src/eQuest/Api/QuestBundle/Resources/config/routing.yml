@@ -1,11 +1,27 @@
-e_quest_api_quest_homepage:
-    path:     /hello/{name}
-    defaults: { _controller: eQuestApiQuestBundle:Default:index }
+e_quest_api_quest_admin_achivement_:
+    resource: "@eQuestApiQuestBundle/Resources/config/routing/achivement.yml"
+    prefix:   /admin/achivement/
 
-get_quest:
+e_quest_api_quest_admin_points_:
+    resource: "@eQuestApiQuestBundle/Resources/config/routing/points.yml"
+    prefix:   /admin/points/
+
+e_quest_api_quest_admin_map_:
+    resource: "@eQuestApiQuestBundle/Resources/config/routing/map.yml"
+    prefix:   /admin/map/
+
+e_quest_api_quest_admin_user_:
+    resource: "@eQuestApiQuestBundle/Resources/config/routing/user.yml"
+    prefix:   /admin/user/
+
+e_quest_api_quest_admin_quest_:
+    resource: "@eQuestApiQuestBundle/Resources/config/routing/quest.yml"
+    prefix:   /admin/quest/
+
+api_get_quest:
     path:     /api/quest/{id}
-    defaults: { _controller: eQuestApiQuestBundle:Quest:getQuest }
+    defaults: { _controller: eQuestApiQuestBundle:ApiQuest:getQuest }
 
-get_quest_list:
+api_get_quest_list:
     path:     /api/list-quests/
-    defaults: { _controller: eQuestApiQuestBundle:Quest:getQuestList }
+    defaults: { _controller: eQuestApiQuestBundle:ApiQuest:getQuestList }

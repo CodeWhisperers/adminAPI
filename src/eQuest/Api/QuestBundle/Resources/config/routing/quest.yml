@@ -1,0 +1,30 @@
+admin_quest_:
+    path:     /
+    defaults: { _controller: "eQuestApiQuestBundle:Quest:index" }
+
+admin_quest__show:
+    path:     /{id}/show
+    defaults: { _controller: "eQuestApiQuestBundle:Quest:show" }
+
+admin_quest__new:
+    path:     /new
+    defaults: { _controller: "eQuestApiQuestBundle:Quest:new" }
+
+admin_quest__create:
+    path:     /create
+    defaults: { _controller: "eQuestApiQuestBundle:Quest:create" }
+    methods:  POST
+
+admin_quest__edit:
+    path:     /{id}/edit
+    defaults: { _controller: "eQuestApiQuestBundle:Quest:edit" }
+
+admin_quest__update:
+    path:     /{id}/update
+    defaults: { _controller: "eQuestApiQuestBundle:Quest:update" }
+    methods:  [POST, PUT]
+
+admin_quest__delete:
+    path:     /{id}/delete
+    defaults: { _controller: "eQuestApiQuestBundle:Quest:delete" }
+    methods:  [POST, DELETE]
