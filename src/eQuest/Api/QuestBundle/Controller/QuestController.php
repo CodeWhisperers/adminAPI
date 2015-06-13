@@ -9,6 +9,9 @@ use Symfony\Component\Routing\RouteCollection;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Serializer\Encoder\JsonEncoder;
+use Symfony\Component\Serializer\Normalizer\GetSetMethodNormalizer;
+use Symfony\Component\Serializer\Serializer;
 
 
 class QuestController extends Controller
@@ -17,10 +20,13 @@ class QuestController extends Controller
     {
         $repository = $this->getDoctrine()->getRepository('eQuestApiQuestBundle:Quest');
         $quest = $repository->find($id);
-        $serializer = $this->get('jms_serializer');
-        $response = $serializer->serialize($quest,'json');
-        return new Response($response);
-        //return new JsonResponse($quest);
+        $serializer = new Serializer(
+            array(new GetSetMethodNormalizer()),
+            array('json' => new JsonEncoder())
+        );
+        $json = $serializer->serialize($quest, 'json');
+        
+        return new Response($json);
     }
 
     public function getQuestListAction()
