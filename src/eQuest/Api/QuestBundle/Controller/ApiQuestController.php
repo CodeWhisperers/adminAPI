@@ -18,7 +18,7 @@ class ApiQuestController extends Controller
 {
     public function getQuestAction($id)
     {
-        $repository = $this->getDoctrine()->getRepository('eQuestApiQuestBundle:ApiQuest');
+        $repository = $this->getDoctrine()->getRepository('eQuestApiQuestBundle:Quest');
         $quest = $repository->find($id);
         $serializer = new Serializer(
             array(new GetSetMethodNormalizer()),
@@ -34,7 +34,7 @@ class ApiQuestController extends Controller
 
     public function getQuestListAction()
     {
-        $repository = $this->getDoctrine()->getRepository('eQuestApiQuestBundle:ApiQuest');
+        $repository = $this->getDoctrine()->getRepository('eQuestApiQuestBundle:Quest');
         $quests = $repository->findAll();
         $serializer = new Serializer(
             array(new GetSetMethodNormalizer()),
