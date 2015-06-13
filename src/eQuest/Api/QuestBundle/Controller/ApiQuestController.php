@@ -18,18 +18,19 @@ class ApiQuestController extends Controller
 {
     public function getQuestAction($id)
     {
-//        $repository = $this->getDoctrine()->getRepository('eQuestApiQuestBundle:Quest');
-//        $quest = $repository->find($id);
-//        $serializer = new Serializer(
-//            array(new GetSetMethodNormalizer()),
-//            array('json' => new JsonEncoder())
-//        );
-        //$json = $serializer->serialize($quest, 'json');
+        $repository = $this->getDoctrine()->getRepository('eQuestApiQuestBundle:Quest');
+        $quest = $repository->find($id);
+        $serializer = new Serializer(
+            array(new GetSetMethodNormalizer()),
+            array('json' => new JsonEncoder())
+        );
+        $json = $serializer->serialize($quest, 'json');
         /*
         $response = new JsonResponse($json, 200, array());
         $response->setCallback('getQuest');
         return $response;*/
 
+        /*
         $json = array(
                 "id"=>1,
                 "name"=>"HR quest",
@@ -43,15 +44,15 @@ class ApiQuestController extends Controller
         $response = new JsonResponse($json, 200, array());
         $response->setCallback($callback);
         return $response;
+        */
 
-        /*
         $response = new Response();
         $response->headers->set('Content-Type', 'application/json');
         $response->headers->set("Access-Control-Allow-Origin", "*");
         $response->headers->set("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
         $response->headers->set('Access-Control-Allow-Headers', 'origin, content-type, accept');
         $response->setContent($json);
-        return $response;*/
+        return $response;
     }
 
     public function getQuestListAction()
