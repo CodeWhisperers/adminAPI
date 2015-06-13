@@ -12,48 +12,16 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Points
 {
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
     private $id;
 
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="x", type="integer")
-     */
     private $x;
 
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="type", type="integer")
-     */
+    private $y;
+
     private $type;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="details", type="text")
-     */
-    private $details;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="qr_code", type="string", length=255)
-     */
-    private $qrCode;
-
-
-    /**
-     * Get id
-     *
-     * @return integer 
+     * @return mixed
      */
     public function getId()
     {
@@ -61,22 +29,15 @@ class Points
     }
 
     /**
-     * Set x
-     *
-     * @param integer $x
-     * @return Points
+     * @param mixed $id
      */
-    public function setX($x)
+    public function setId($id)
     {
-        $this->x = $x;
-
-        return $this;
+        $this->id = $id;
     }
 
     /**
-     * Get x
-     *
-     * @return integer 
+     * @return mixed
      */
     public function getX()
     {
@@ -84,22 +45,31 @@ class Points
     }
 
     /**
-     * Set type
-     *
-     * @param integer $type
-     * @return Points
+     * @param mixed $x
      */
-    public function setType($type)
+    public function setX($x)
     {
-        $this->type = $type;
-
-        return $this;
+        $this->x = $x;
     }
 
     /**
-     * Get type
-     *
-     * @return integer 
+     * @return mixed
+     */
+    public function getY()
+    {
+        return $this->y;
+    }
+
+    /**
+     * @param mixed $y
+     */
+    public function setY($y)
+    {
+        $this->y = $y;
+    }
+
+    /**
+     * @return mixed
      */
     public function getType()
     {
@@ -107,22 +77,31 @@ class Points
     }
 
     /**
-     * Set details
-     *
-     * @param string $details
-     * @return Points
+     * @param mixed $type
      */
-    public function setDetails($details)
+    public function setType($type)
     {
-        $this->details = $details;
-
-        return $this;
+        $this->type = $type;
     }
 
     /**
-     * Get details
-     *
-     * @return string 
+     * @return mixed
+     */
+    public function getMapId()
+    {
+        return $this->mapId;
+    }
+
+    /**
+     * @param mixed $mapId
+     */
+    public function setMapId($mapId)
+    {
+        $this->mapId = $mapId;
+    }
+
+    /**
+     * @return mixed
      */
     public function getDetails()
     {
@@ -130,25 +109,33 @@ class Points
     }
 
     /**
-     * Set qrCode
-     *
-     * @param string $qrCode
-     * @return Points
+     * @param mixed $details
      */
-    public function setQrCode($qrCode)
+    public function setDetails($details)
     {
-        $this->qrCode = $qrCode;
-
-        return $this;
+        $this->details = $details;
     }
 
     /**
-     * Get qrCode
-     *
-     * @return string 
+     * @return mixed
      */
     public function getQrCode()
     {
         return $this->qrCode;
     }
+
+    /**
+     * @param mixed $qrCode
+     */
+    public function setQrCode($qrCode)
+    {
+        $this->qrCode = $qrCode;
+    }
+
+    private $mapId;
+
+    private $details;
+
+    private $qrCode;
+
 }

@@ -12,34 +12,14 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Achivement
 {
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
     private $id;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="name", type="string", length=255)
-     */
     private $name;
 
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="[D[D[D[Ctus[3~[3~[3~[3~", type="integer")
-     */
-    private $[D[D[D[Ctus[3~[3~[3~[3~;
-
+    private $status;
 
     /**
-     * Get id
-     *
-     * @return integer 
+     * @return mixed
      */
     public function getId()
     {
@@ -47,22 +27,15 @@ class Achivement
     }
 
     /**
-     * Set name
-     *
-     * @param string $name
-     * @return Achivement
+     * @param mixed $id
      */
-    public function setName($name)
+    public function setId($id)
     {
-        $this->name = $name;
-
-        return $this;
+        $this->id = $id;
     }
 
     /**
-     * Get name
-     *
-     * @return string 
+     * @return mixed
      */
     public function getName()
     {
@@ -70,25 +43,27 @@ class Achivement
     }
 
     /**
-     * Set [D[D[D[Ctus[3~[3~[3~[3~
-     *
-     * @param integer $[D[D[D[Ctus[3~[3~[3~[3~
-     * @return Achivement
+     * @param mixed $name
      */
-    public function set[D[D[D[Ctus[3~[3~[3~[3~($[D[D[D[Ctus[3~[3~[3~[3~)
+    public function setName($name)
     {
-        $this->[D[D[D[Ctus[3~[3~[3~[3~ = $[D[D[D[Ctus[3~[3~[3~[3~;
-
-        return $this;
+        $this->name = $name;
     }
 
     /**
-     * Get [D[D[D[Ctus[3~[3~[3~[3~
-     *
-     * @return integer 
+     * @return mixed
      */
-    public function get[D[D[D[Ctus[3~[3~[3~[3~()
+    public function getStatus()
     {
-        return $this->[D[D[D[Ctus[3~[3~[3~[3~;
+        return $this->status;
     }
+
+    /**
+     * @param mixed $status
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
+    }
+
 }

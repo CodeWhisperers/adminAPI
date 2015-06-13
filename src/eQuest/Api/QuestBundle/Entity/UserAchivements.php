@@ -12,34 +12,14 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class UserAchivements
 {
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
     private $id;
 
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="user_id", type="integer")
-     */
     private $userId;
 
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="achivement_id", type="integer")
-     */
     private $achivementId;
 
-
     /**
-     * Get id
-     *
-     * @return integer 
+     * @return mixed
      */
     public function getId()
     {
@@ -47,22 +27,15 @@ class UserAchivements
     }
 
     /**
-     * Set userId
-     *
-     * @param integer $userId
-     * @return UserAchivements
+     * @param mixed $id
      */
-    public function setUserId($userId)
+    public function setId($id)
     {
-        $this->userId = $userId;
-
-        return $this;
+        $this->id = $id;
     }
 
     /**
-     * Get userId
-     *
-     * @return integer 
+     * @return mixed
      */
     public function getUserId()
     {
@@ -70,25 +43,27 @@ class UserAchivements
     }
 
     /**
-     * Set achivementId
-     *
-     * @param integer $achivementId
-     * @return UserAchivements
+     * @param mixed $userId
      */
-    public function setAchivementId($achivementId)
+    public function setUserId($userId)
     {
-        $this->achivementId = $achivementId;
-
-        return $this;
+        $this->userId = $userId;
     }
 
     /**
-     * Get achivementId
-     *
-     * @return integer 
+     * @return mixed
      */
     public function getAchivementId()
     {
         return $this->achivementId;
     }
+
+    /**
+     * @param mixed $achivementId
+     */
+    public function setAchivementId($achivementId)
+    {
+        $this->achivementId = $achivementId;
+    }
+
 }

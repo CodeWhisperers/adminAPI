@@ -8,14 +8,19 @@ class QuestController extends Controller
 {
     public function getQuestAction($id)
     {
-        return $this->render('eQuestApiQuestBundle:Quest:getQuest.html.twig', array(
-                // ...
-            ));    }
+
+    }
 
     public function getQuestListAction()
     {
-        return $this->render('eQuestApiQuestBundle:Quest:getQuestList.html.twig', array(
-                // ...
-            ));    }
+        //toate questurile
+    }
+
+    public function setActiveQuestAction($user_id,$quest_id){
+
+
+    }
+
+
 
 }

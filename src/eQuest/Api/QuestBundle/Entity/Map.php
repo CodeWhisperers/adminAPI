@@ -50,17 +50,7 @@ class Map
     private $img;
 
     /**
-     * @var integer
-     *
-     * @ORM\Column(name="domain_id", type="integer")
-     */
-    private $domainId;
-
-
-    /**
-     * Get id
-     *
-     * @return integer 
+     * @return int
      */
     public function getId()
     {
@@ -68,22 +58,15 @@ class Map
     }
 
     /**
-     * Set name
-     *
-     * @param string $name
-     * @return Map
+     * @param int $id
      */
-    public function setName($name)
+    public function setId($id)
     {
-        $this->name = $name;
-
-        return $this;
+        $this->id = $id;
     }
 
     /**
-     * Get name
-     *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -91,22 +74,15 @@ class Map
     }
 
     /**
-     * Set building
-     *
-     * @param string $building
-     * @return Map
+     * @param string $name
      */
-    public function setBuilding($building)
+    public function setName($name)
     {
-        $this->building = $building;
-
-        return $this;
+        $this->name = $name;
     }
 
     /**
-     * Get building
-     *
-     * @return string 
+     * @return string
      */
     public function getBuilding()
     {
@@ -114,22 +90,15 @@ class Map
     }
 
     /**
-     * Set floorNo
-     *
-     * @param integer $floorNo
-     * @return Map
+     * @param string $building
      */
-    public function setFloorNo($floorNo)
+    public function setBuilding($building)
     {
-        $this->floorNo = $floorNo;
-
-        return $this;
+        $this->building = $building;
     }
 
     /**
-     * Get floorNo
-     *
-     * @return integer 
+     * @return int
      */
     public function getFloorNo()
     {
@@ -137,22 +106,15 @@ class Map
     }
 
     /**
-     * Set img
-     *
-     * @param string $img
-     * @return Map
+     * @param int $floorNo
      */
-    public function setImg($img)
+    public function setFloorNo($floorNo)
     {
-        $this->img = $img;
-
-        return $this;
+        $this->floorNo = $floorNo;
     }
 
     /**
-     * Get img
-     *
-     * @return string 
+     * @return string
      */
     public function getImg()
     {
@@ -160,25 +122,11 @@ class Map
     }
 
     /**
-     * Set domainId
-     *
-     * @param integer $domainId
-     * @return Map
+     * @param string $img
      */
-    public function setDomainId($domainId)
+    public function setImg($img)
     {
-        $this->domainId = $domainId;
-
-        return $this;
+        $this->img = $img;
     }
 
-    /**
-     * Get domainId
-     *
-     * @return integer 
-     */
-    public function getDomainId()
-    {
-        return $this->domainId;
-    }
 }

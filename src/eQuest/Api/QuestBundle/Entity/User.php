@@ -49,11 +49,22 @@ class User
      */
     private $status;
 
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="type", type="integer")
+     */
+    private $type;
 
     /**
-     * Get id
+     * @var integer
      *
-     * @return integer 
+     * @ORM\Column(name="t_xp", type="integer")
+     */
+    private $t_xp;
+
+    /**
+     * @return int
      */
     public function getId()
     {
@@ -61,22 +72,15 @@ class User
     }
 
     /**
-     * Set email
-     *
-     * @param string $email
-     * @return User
+     * @param int $id
      */
-    public function setEmail($email)
+    public function setId($id)
     {
-        $this->email = $email;
-
-        return $this;
+        $this->id = $id;
     }
 
     /**
-     * Get email
-     *
-     * @return string 
+     * @return string
      */
     public function getEmail()
     {
@@ -84,22 +88,15 @@ class User
     }
 
     /**
-     * Set domain
-     *
-     * @param string $domain
-     * @return User
+     * @param string $email
      */
-    public function setDomain($domain)
+    public function setEmail($email)
     {
-        $this->domain = $domain;
-
-        return $this;
+        $this->email = $email;
     }
 
     /**
-     * Get domain
-     *
-     * @return string 
+     * @return string
      */
     public function getDomain()
     {
@@ -107,22 +104,15 @@ class User
     }
 
     /**
-     * Set avatar
-     *
-     * @param string $avatar
-     * @return User
+     * @param string $domain
      */
-    public function setAvatar($avatar)
+    public function setDomain($domain)
     {
-        $this->avatar = $avatar;
-
-        return $this;
+        $this->domain = $domain;
     }
 
     /**
-     * Get avatar
-     *
-     * @return string 
+     * @return string
      */
     public function getAvatar()
     {
@@ -130,25 +120,59 @@ class User
     }
 
     /**
-     * Set status
-     *
-     * @param integer $status
-     * @return User
+     * @param string $avatar
      */
-    public function setStatus($status)
+    public function setAvatar($avatar)
     {
-        $this->status = $status;
-
-        return $this;
+        $this->avatar = $avatar;
     }
 
     /**
-     * Get status
-     *
-     * @return integer 
+     * @return int
      */
     public function getStatus()
     {
         return $this->status;
     }
+
+    /**
+     * @param int $status
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
+    }
+
+    /**
+     * @return int
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * @param int $type
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
+    }
+
+    /**
+     * @return int
+     */
+    public function getTXp()
+    {
+        return $this->t_xp;
+    }
+
+    /**
+     * @param int $t_xp
+     */
+    public function setTXp($t_xp)
+    {
+        $this->t_xp = $t_xp;
+    }
+
 }

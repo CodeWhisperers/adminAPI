@@ -22,7 +22,7 @@ class Quest
     /**
      * @var string
      */
-    private $img;
+    private $status;
 
     /**
      * @var string
@@ -32,18 +32,21 @@ class Quest
     /**
      * @var integer
      */
-    private $active;
+    private $ts;
 
     /**
      * @var integer
      */
-    private $achivmentId;
+    private $targets_to_achive;
 
 
     /**
-     * Get id
-     *
-     * @return integer 
+     * @var integer
+     */
+    private $t_xp;
+
+    /**
+     * @return int
      */
     public function getId()
     {
@@ -51,22 +54,15 @@ class Quest
     }
 
     /**
-     * Set name
-     *
-     * @param string $name
-     * @return Quest
+     * @param int $id
      */
-    public function setName($name)
+    public function setId($id)
     {
-        $this->name = $name;
-
-        return $this;
+        $this->id = $id;
     }
 
     /**
-     * Get name
-     *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -74,45 +70,31 @@ class Quest
     }
 
     /**
-     * Set img
-     *
-     * @param string $img
-     * @return Quest
+     * @param string $name
      */
-    public function setImg($img)
+    public function setName($name)
     {
-        $this->img = $img;
-
-        return $this;
+        $this->name = $name;
     }
 
     /**
-     * Get img
-     *
-     * @return string 
+     * @return string
      */
-    public function getImg()
+    public function getStatus()
     {
-        return $this->img;
+        return $this->status;
     }
 
     /**
-     * Set description
-     *
-     * @param string $description
-     * @return Quest
+     * @param string $status
      */
-    public function setDescription($description)
+    public function setStatus($status)
     {
-        $this->description = $description;
-
-        return $this;
+        $this->status = $status;
     }
 
     /**
-     * Get description
-     *
-     * @return string 
+     * @return string
      */
     public function getDescription()
     {
@@ -120,48 +102,59 @@ class Quest
     }
 
     /**
-     * Set active
-     *
-     * @param integer $active
-     * @return Quest
+     * @param string $description
      */
-    public function setActive($active)
+    public function setDescription($description)
     {
-        $this->active = $active;
-
-        return $this;
+        $this->description = $description;
     }
 
     /**
-     * Get active
-     *
-     * @return integer 
+     * @return int
      */
-    public function getActive()
+    public function getTs()
     {
-        return $this->active;
+        return $this->ts;
     }
 
     /**
-     * Set achivmentId
-     *
-     * @param integer $achivmentId
-     * @return Quest
+     * @param int $ts
      */
-    public function setAchivmentId($achivmentId)
+    public function setTs($ts)
     {
-        $this->achivmentId = $achivmentId;
-
-        return $this;
+        $this->ts = $ts;
     }
 
     /**
-     * Get achivmentId
-     *
-     * @return integer 
+     * @return int
      */
-    public function getAchivmentId()
+    public function getTargetsToAchive()
     {
-        return $this->achivmentId;
+        return $this->targets_to_achive;
     }
+
+    /**
+     * @param int $targets_to_achive
+     */
+    public function setTargetsToAchive($targets_to_achive)
+    {
+        $this->targets_to_achive = $targets_to_achive;
+    }
+
+    /**
+     * @return int
+     */
+    public function getTXp()
+    {
+        return $this->t_xp;
+    }
+
+    /**
+     * @param int $t_xp
+     */
+    public function setTXp($t_xp)
+    {
+        $this->t_xp = $t_xp;
+    }
+
 }

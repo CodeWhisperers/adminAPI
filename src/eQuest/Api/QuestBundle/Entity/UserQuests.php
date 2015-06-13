@@ -12,48 +12,18 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class UserQuests
 {
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
     private $id;
 
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="user_id", type="integer")
-     */
     private $userId;
 
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="[D[D[3~[3~[3~tus[3~[3~[3~[3~", type="integer")
-     */
-    private $[D[D[3~[3~[3~tus[3~[3~[3~[3~;
+    private $status;
 
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="progress", type="integer")
-     */
     private $progress;
 
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="totalpoints", type="integer")
-     */
-    private $totalpoints;
-
+    private $quests_id;
 
     /**
-     * Get id
-     *
-     * @return integer 
+     * @return mixed
      */
     public function getId()
     {
@@ -61,22 +31,15 @@ class UserQuests
     }
 
     /**
-     * Set userId
-     *
-     * @param integer $userId
-     * @return UserQuests
+     * @param mixed $id
      */
-    public function setUserId($userId)
+    public function setId($id)
     {
-        $this->userId = $userId;
-
-        return $this;
+        $this->id = $id;
     }
 
     /**
-     * Get userId
-     *
-     * @return integer 
+     * @return mixed
      */
     public function getUserId()
     {
@@ -84,45 +47,31 @@ class UserQuests
     }
 
     /**
-     * Set [D[D[3~[3~[3~tus[3~[3~[3~[3~
-     *
-     * @param integer $[D[D[3~[3~[3~tus[3~[3~[3~[3~
-     * @return UserQuests
+     * @param mixed $userId
      */
-    public function set[D[D[3~[3~[3~tus[3~[3~[3~[3~($[D[D[3~[3~[3~tus[3~[3~[3~[3~)
+    public function setUserId($userId)
     {
-        $this->[D[D[3~[3~[3~tus[3~[3~[3~[3~ = $[D[D[3~[3~[3~tus[3~[3~[3~[3~;
-
-        return $this;
+        $this->userId = $userId;
     }
 
     /**
-     * Get [D[D[3~[3~[3~tus[3~[3~[3~[3~
-     *
-     * @return integer 
+     * @return mixed
      */
-    public function get[D[D[3~[3~[3~tus[3~[3~[3~[3~()
+    public function getStatus()
     {
-        return $this->[D[D[3~[3~[3~tus[3~[3~[3~[3~;
+        return $this->status;
     }
 
     /**
-     * Set progress
-     *
-     * @param integer $progress
-     * @return UserQuests
+     * @param mixed $status
      */
-    public function setProgress($progress)
+    public function setStatus($status)
     {
-        $this->progress = $progress;
-
-        return $this;
+        $this->status = $status;
     }
 
     /**
-     * Get progress
-     *
-     * @return integer 
+     * @return mixed
      */
     public function getProgress()
     {
@@ -130,25 +79,27 @@ class UserQuests
     }
 
     /**
-     * Set totalpoints
-     *
-     * @param integer $totalpoints
-     * @return UserQuests
+     * @param mixed $progress
      */
-    public function setTotalpoints($totalpoints)
+    public function setProgress($progress)
     {
-        $this->totalpoints = $totalpoints;
-
-        return $this;
+        $this->progress = $progress;
     }
 
     /**
-     * Get totalpoints
-     *
-     * @return integer 
+     * @return mixed
      */
-    public function getTotalpoints()
+    public function getQuestsId()
     {
-        return $this->totalpoints;
+        return $this->quests_id;
     }
+
+    /**
+     * @param mixed $quests_id
+     */
+    public function setQuestsId($quests_id)
+    {
+        $this->quests_id = $quests_id;
+    }
+
 }
