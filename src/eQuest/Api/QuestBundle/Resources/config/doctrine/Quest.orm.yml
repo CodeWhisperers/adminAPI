@@ -19,7 +19,7 @@ eQuest\Api\QuestBundle\Entity\Quest:
             type: text
         ts:
             type: timestamp
-        t_xp
+        t_xp:
             type: integer
         targets_to_achive:
             type: text
