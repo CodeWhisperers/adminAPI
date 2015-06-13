@@ -17,7 +17,10 @@ class QuestController extends Controller
     {
         $repository = $this->getDoctrine()->getRepository('eQuestApiQuestBundle:Quest');
         $quest = $repository->find($id);
-        return new JsonResponse($quest);
+        $serializer = $this->get('jms_serializer');
+        $response = $serializer->serialize($quest,'json');
+        return new Response($response);
+        //return new JsonResponse($quest);
     }
 
     public function getQuestListAction()
