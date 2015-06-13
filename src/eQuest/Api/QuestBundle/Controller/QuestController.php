@@ -16,8 +16,8 @@ class QuestController extends Controller
     public function getQuestAction($id)
     {
         $repository = $this->getDoctrine()->getRepository('eQuestApiQuestBundle:Quest');
-        $quest = $repository->findOneById($id);
-        return new JsonResponse($quest);
+        $quest = $repository->find($id);
+        return JsonResponse($quest);
     }
 
     public function getQuestListAction()
