@@ -12,14 +12,16 @@ eQuest\Api\QuestBundle\Entity\Quest:
         name:
             type: string
             length: 255
-        img:
+        name:
             type: string
             length: 255
         description:
             type: text
-        active:
+        ts:
+            type: timestamp
+        t_xp
             type: integer
-        achivmentId:
-            type: integer
-            column: achivment_id
+        targets_to_achive:
+            type: text
+            column: targets_to_achive
     lifecycleCallbacks: {  }
