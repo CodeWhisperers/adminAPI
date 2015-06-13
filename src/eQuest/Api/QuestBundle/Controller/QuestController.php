@@ -17,10 +17,7 @@ class QuestController extends Controller
     {
         $repository = $this->getDoctrine()->getRepository('eQuestApiQuestBundle:Quest');
         $quest = $repository->find($id);
-        var_dump($quest);
-        $response = new JsonResponse();
-        $response->setData($quest);
-        return $response;
+        return new JsonResponse($quest);
     }
 
     public function getQuestListAction()
@@ -28,7 +25,7 @@ class QuestController extends Controller
         $repository = $this->getDoctrine()->getRepository('eQuestApiQuestBundle:Quest');
         $quests = $repository->findAll();
         //toate questurile
-        return JsonResponse($quests);
+        return new JsonResponse($quests);
     }
 
     public function setActiveQuestAction($user_id,$quest_id){
