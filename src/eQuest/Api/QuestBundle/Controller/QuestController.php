@@ -39,12 +39,25 @@ class QuestController extends Controller
             array('json' => new JsonEncoder())
         );
         $json = $serializer->serialize($quests, 'json');
-
-        return new Response($json);
+        
+        $response = new Response();
+        $response->headers->set('Content-Type', 'application/json');
+        $response->setData($json);
+        return $response;
     }
 
     public function setActiveQuestAction($user_id,$quest_id){
 
+
+    }
+
+    public function getActiveQuestAction($user_id){
+
+
+    }
+
+
+    public function completeQuestAction($user_id,$quest_id){
 
     }
 
