@@ -1,3 +1,11 @@
 e_quest_api_quest_homepage:
     path:     /hello/{name}
     defaults: { _controller: eQuestApiQuestBundle:Default:index }
+
+get_quest:
+    path:     /api/quest/{id}
+    defaults: { _controller: eQuestApiQuestBundle:Quest:getQuest }
+
+get_quest_list:
+    path:     /api/list-quests/
+    defaults: { _controller: eQuestApiQuestBundle:Quest:getQuestList }
