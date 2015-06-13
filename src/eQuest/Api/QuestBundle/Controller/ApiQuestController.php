@@ -25,6 +25,12 @@ class ApiQuestController extends Controller
             array('json' => new JsonEncoder())
         );
         $json = $serializer->serialize($quest, 'json');
+        
+        $response = new JsonResponse($json, 200, array());
+        $response->setCallback('getQuest');
+        return $response;
+
+        /*
         $response = new Response();
         $response->headers->set('Content-Type', 'application/json');
         $response->headers->set("Access-Control-Allow-Origin", "*");
@@ -32,7 +38,7 @@ class ApiQuestController extends Controller
         $response->headers->set('Access-Control-Allow-Headers', 'origin, content-type, accept');
         $response->setContent($json);
 
-        return $response;
+        return $response;*/
     }
 
     public function getQuestListAction()
