@@ -16,9 +16,7 @@
     {% endblock %}
 </head>
 <body>
-{% block body %}
-{% include(':includes/menu.html.twig') %}
-
+{{ include('includes/menu.html.twig') }}
 <div class="container">
     <div class="page-header" id="banner">
         <div class="row">
@@ -34,15 +32,16 @@
         </div>
     </div>
 </div>
-
-    {% include(':includes/footer.html.twig') %}
-</div>
+<!-- body block -->
+{% block body %}
 {% endblock %}
+<!-- end of block -->
+{% include(':includes/footer.html.twig') %}
+</div>
 {% block javascripts %}
     <script src="{{ asset('assets/js/jquery-1.10.2.min.js') }}"></script>
     <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('assets/js/bootswatch.js') }}"></script>
 {% endblock %}
-
 </body>
 </html>
